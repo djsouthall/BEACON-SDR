@@ -21,8 +21,16 @@ Dan Southall
 dsouthall@uchicago.edu
 
 Useful Links:
-https://osmocom.org/projects/rtl-sdr/wiki/Rtl-sdr
 
-https://github.com/anitaNeutrino/anitaFlightSoft/tree/master/programs/RTLd
+- https://osmocom.org/projects/rtl-sdr/wiki/Rtl-sdr
+- https://github.com/anitaNeutrino/anitaFlightSoft/tree/master/programs/RTLd
+- https://www.instructables.com/id/rtl-sdr-on-Ubuntu/
+- http://kmkeen.com/rtl-power/ 
+- http://superkuh.com/rtlsdr.html
+- https://beagleboard.org/pru
 
-https://www.instructables.com/id/rtl-sdr-on-Ubuntu/
+The source below looks interesting, but might not work for the BBB as I think it depends on multithreading.
+
+- https://github.com/AD-Vega/rtl-power-fftw
+
+
