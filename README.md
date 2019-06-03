@@ -29,6 +29,7 @@ Useful Links:
 - http://superkuh.com/rtlsdr.html
 - https://beagleboard.org/pru
 - https://pypi.org/project/scp/
+- https://github.com/AD-Vega/rtl-power-fftw
 
 The source below looks interesting, but might not work for the BBB as I think it depends on multithreading.
 
