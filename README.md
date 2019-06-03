@@ -28,6 +28,7 @@ Useful Links:
 - http://kmkeen.com/rtl-power/ 
 - http://superkuh.com/rtlsdr.html
 - https://beagleboard.org/pru
+- https://pypi.org/project/scp/
 
 The source below looks interesting, but might not work for the BBB as I think it depends on multithreading.
 
