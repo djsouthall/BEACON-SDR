@@ -18,7 +18,7 @@ scp.close()
 
 if __name__ == "__main__":
     input_dir = '/home/nuphase/BEACON-SDR/captures/' #On Beagle (Where the script should be run.
-    output_dir = '/home/dsouthall/BEACON-SDR/captures' #On Sundog
+    output_dir = '/home/dsouthall/BEACON-SDR/captures/' #On Sundog
     wait_time = 10 #s
     
     call_time = time.time()
