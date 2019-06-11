@@ -23,7 +23,7 @@ if __name__ == "__main__":
     ssh.load_system_host_keys()
     ssh.connect('sundog.uchicago.edu',username='dsouthall')
     
-
+    loading_string = ''
     while True:
         files = []
         for ext in extensions:
@@ -32,6 +32,7 @@ if __name__ == "__main__":
             f = f.replace('\\','/') # To handle windows paths.
             t = os.path.getmtime(f)
             if t >= call_time:
+                loading_string = '.'
                 # SCPCLient takes a paramiko transport and progress callback as its arguments.
                 # Might want to look into a keep alive if I only want to ssh once and not every call.
                 with SCPClient(ssh.get_transport(), progress=progress) as scp:
@@ -68,5 +69,11 @@ if __name__ == "__main__":
                         print(e)
 
                 scp.close()
+            else:
+                loading_string = loading_string + '.'
+                print('\r' + loading_string)
+                if loading_string == '...':
+                    loading_string = ''
+
         call_time = time.time()
         time.sleep(wait_time)
