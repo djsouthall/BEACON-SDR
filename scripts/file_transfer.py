@@ -46,6 +46,7 @@ if __name__ == "__main__":
                         print(e)
                     #met file
                     try:
+                        f = f.replace('.ready','.met')
                         f_new = f_new.replace('.ready','.met')
                         print('Transferring met file modified since last call')
                         scp.put(f, f_new)
@@ -58,6 +59,7 @@ if __name__ == "__main__":
 
                     #bin file
                     try:
+                        f = f.replace('.met','.bin')
                         f_new = f_new.replace('.met','.bin')
                         print('Transferring bin file modified since last call')
                         scp.put(f, f_new)
@@ -70,10 +72,13 @@ if __name__ == "__main__":
 
                 scp.close()
             else:
-                loading_string = loading_string + '.'
-                print('\r' + loading_string)
                 if loading_string == '...':
                     loading_string = ''
+                    sys.stdout.write('   ' + '\r')
+                    sys.stdout.flush()    
+                loading_string = loading_string + '.'
+                sys.stdout.write(loading_string + '\r')
+                sys.stdout.flush()
 
         call_time = time.time()
         time.sleep(wait_time)

@@ -147,8 +147,9 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         outfile = sys.argv[1]
     else:
-        outfile = 'capture'
+        outfile = '/home/nuphase/BEACON-SDR/captures/capture'
 
+    break_time = time.time() + 3600*2
 
     while True:
         call_time = time.time()
@@ -157,13 +158,14 @@ if __name__ == "__main__":
 
         outfile_new = outfile + '_' + str(call_time).replace('.','p')
 
+
         output, error = rtlPowerFFTW(baseline=None, \
                         bins=512, \
                         buffers=None, \
                         continuous=False, \
                         device=None, \
-                        elapsed='30s', \
-                        freq=[30e6, 100e6], \
+                        elapsed='30m', \
+                        freq=[70e6, 100e6], \
                         gain=350, \
                         linear=False, \
                         matrix=outfile_new, \
@@ -183,3 +185,5 @@ if __name__ == "__main__":
         print('Finished rtl_power_fftw and created .ready file.')
         print(output)
         print(error)
+        if time.time() > break_time:
+            break
